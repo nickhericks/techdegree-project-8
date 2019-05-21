@@ -1,7 +1,6 @@
 # Project 8 - Full Stack JavaScript Techdegree
 
 ### SQL Library Manager (built with Sequelize)
-
 A web application that tracks library books, built using the SQL ORM Sequelize.
 
 ---
@@ -17,7 +16,6 @@ A web application that tracks library books, built using the SQL ORM Sequelize.
 <!-- :mag: Live version available at [nickhericks.github.io/techdegree-project-6/](https://nickhericks.github.io/techdegree-project-6/) -->
 
 ## Project objective
-
 In this project, I was given HTML designs and an existing SQLite database. I was required to implement a dynamic website using JavaScript, Node.js, Express, Pug, and the SQL ORM Sequelize.
 
 The application includes pages to list, add, update, and delete books from an SQLite database.
@@ -75,7 +73,6 @@ router.get('/:id', (req, res) => {
 ``` -->
 
 ## Acknowledgements
-
 This project was built as part of the [Full Stack JavaScript Techdegree](https://join.teamtreehouse.com/techdegree/) offered by [Treehouse](https://teamtreehouse.com) :raised_hands:
 
 Also, a big thank you to the creators and maintainers of [Node.js](https://nodejs.org/en/), [Express](https://expressjs.com/), and [Pug](https://www.npmjs.com/package/pug). 👍
