@@ -4,8 +4,8 @@
   "description": "SQL Library Manager",
   "main": "app.js",
   "scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
-		"start": "node app.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,12 @@
   "bugs": {
     "url": "https://github.com/nickhericks/techdegree-project-8/issues"
   },
-  "homepage": "https://github.com/nickhericks/techdegree-project-8#readme"
+  "homepage": "https://github.com/nickhericks/techdegree-project-8#readme",
+  "dependencies": {
+    "express": "^4.17.0",
+    "pug": "^2.0.3",
+    "sequelize": "^5.8.6",
+    "sequelize-cli": "^5.4.0",
+    "sqlite3": "^4.0.8"
+  }
 }
