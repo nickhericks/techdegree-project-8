@@ -42,6 +42,7 @@ app.use(function(req, res, next) {
 app.use((err, req, res, next) => {
 	res.locals.error = err;
 	res.status(err.status);
+	console.dir(`Error: ${err.status} - ${err.message}`);
 	res.render('error');
 });
 
