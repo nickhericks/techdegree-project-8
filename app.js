@@ -2,11 +2,16 @@
 const express = require('express');
 var sequelize = require('./models').sequelize;
 
+
+const routes = require("./routes");
+const booksRoutes = require("./routes/books");
+
 const app = express();
 const port = 3000;
 
-const routes = require('./routes');
-const booksRoutes = require('./routes/books');
+// View engine setup
+app.set('view engine', 'pug');
+
 
 app.use(routes);
 app.use('/books', booksRoutes);

@@ -8,7 +8,21 @@ var Book = require('../models').Book;
 
 
 router.get('/', (req, res) => {
-	res.send('<h1>books route</h1>');
+	// res.send('<h1>books route</h1>');
+	res.render('index');
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 module.exports = router;
