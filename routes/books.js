@@ -63,7 +63,7 @@ router.get('/:id', (req, res) => {
 });
 
 
-/* PUT update book. */
+/* POST update book. */
 router.post('/:id', (req, res) => {
 	Book.findByPk(req.params.id)
 		.then(function(book) {
@@ -96,23 +96,24 @@ router.post('/:id', (req, res) => {
 });
 
 
-// /* DELETE individual article. */
-// router.delete('/:id', function(req, res, next){
-// 	Article.findByPk(req.params.id)
-// 		.then(function(article) {
-// 			if(article) {
-// 				return article.destroy();
-// 			} else {
-// 				res.send(404);
-// 			}
-// 		})
-// 		.then(function() {
-// 			res.redirect('/articles');
-// 		})
-// 		.catch(function(err) {
-// 			res.send(500);
-// 		});
-// });
+
+/* POST delete individual book. */
+router.post('/:id/delete', (req, res) => {
+	Book.findByPk(req.params.id)
+		.then(function(book) {
+			if(book) {
+				return book.destroy();
+			} else {
+				res.sendStatus(404);
+			}
+		})
+		.then(function(book) {
+			res.redirect('/books');
+		})
+		.catch(function(err) {
+			res.sendStatus(500);
+		});
+});
 
 
 
