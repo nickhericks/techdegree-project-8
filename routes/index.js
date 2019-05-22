@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
 
-
+/* GET home page. */
 router.get('/', (req, res) => {
-	res.send('<h1>I love Treehouse!</h1>');
+	// redirect to /books route
+	res.redirect('/books');
 });
-
 
 module.exports = router;
