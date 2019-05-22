@@ -54,11 +54,11 @@ router.get('/:id', (req, res) => {
 			if(book) {
 				res.render('update-book', { book: book, title: book.title });
 			} else {
-				res.sendStatus(404);
+				res.render('error');
 			}
 		})
 		.catch(function(err) {
-			res.sendStatus(500);
+			res.render('error');
 		});
 });
 
@@ -91,7 +91,7 @@ router.post('/:id', (req, res) => {
 			}
 		})
 		.catch(function(err) {
-			res.sendStatus(500);
+			res.render("error");
 		});
 });
 
@@ -114,6 +114,8 @@ router.post('/:id/delete', (req, res) => {
 			res.sendStatus(500);
 		});
 });
+
+
 
 
 
