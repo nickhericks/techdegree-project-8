@@ -6,15 +6,13 @@ const app = express();
 const port = 3000;
 
 const routes = require('./routes');
-
+const helloRoute = require('./routes/hello');
 
 app.use(routes);
+app.use('/hello', helloRoute);
 
 
 
-app.get('/hello', (req, res) => {
-	res.send('<h1>Hello route!</h1>');
-});
 
 sequelize.sync().then(function() {
 	app.listen(port, () => {
