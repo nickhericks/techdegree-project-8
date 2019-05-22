@@ -1,5 +1,10 @@
 doctype html
 html(lang='en')
 	head
-		title Landing Page
+		title= title
 	body
+		h1= title
+		section
+			ul
+				each book in books
+					li= book.title

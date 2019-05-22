@@ -7,9 +7,11 @@ var Book = require('../models').Book;
 
 
 
-router.get('/', (req, res) => {
-	// res.send('<h1>books route</h1>');
-	res.render('index');
+router.get('/', function(req, res, next) {
+	Book.findAll()
+		.then(function(books){
+			res.render('index', { books: books, title: 'Books' });
+		});
 });
 
 
