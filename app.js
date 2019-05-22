@@ -8,6 +8,8 @@ const booksRoutes = require("./routes/books");
 
 const app = express();
 const port = 3000;
+app.use("/static", express.static("public"));
+
 
 // View engine setup
 app.set('view engine', 'pug');
