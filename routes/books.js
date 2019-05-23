@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
 		.then(function(books){
 			res.render('index', { 
 				books: books,
-				title: 'Books'
+				title: 'Library Book Database'
 			});
 		});
 });

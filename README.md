@@ -5,7 +5,7 @@ A web application that tracks library books, built using the SQL ORM Sequelize.
 
 ---
 
-<!-- <img src="https://res.cloudinary.com/dtqevfsxh/image/upload/v1555084799/portfolio/expressPortfolio.png" width="899px"> -->
+<img src="https://res.cloudinary.com/dtqevfsxh/image/upload/v1558621848/portfolio/library-book-database.png" width="899px">
 
 ## View project
 1. Download this repo.
