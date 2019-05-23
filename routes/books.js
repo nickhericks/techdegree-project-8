@@ -6,7 +6,9 @@ var Book = require('../models').Book;
 
 
 /* GET articles listing */
+// When request is made to '/books'
 router.get('/', (req, res) => {
+	// Get all from Book table and order by 'title'
 	Book.findAll({ order: [['title']] })
 		.then(function(books){
 			res.render('index', { 
@@ -25,12 +27,14 @@ router.get('/new', (req, res) => {
 
 /* POST create book */
 router.post('/new', (req, res) => {
+	// Create new entry in Book table, then redirect to '/books' route
 	Book.create(req.body)
 		.then(function() {
 			res.redirect('/');
 			console.dir(req.body);
 		})
 		.catch(function(err){
+			// If validation error, pass errors as locals and re-render page
 			if(err.name === 'SequelizeValidationError'){
 				res.render('new-book', {
 					book: Book.build(req.body),

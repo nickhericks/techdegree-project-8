@@ -41,36 +41,25 @@ In addition to completing the basic requirements for this techdegree project, I 
 - [x] Updating CSS stylings (background, font, colors, box shadows, etc.) -->
 
 
-<!-- ## Code example
-This lesson was all about AJAX, so it seems fitting to show the fetch request used:
+## Code example
+Using the Book object to access the Sequelize book.js model, along with the Sequelize `.findByPk()` method to retrieve the book data we're looking for.
 
 ```javascript
-// When a GET request is made that includes an id after /project
+/* GET individual book */
 router.get('/:id', (req, res) => {
-	// Access id from the route parameter and assign it a variable
-	const id = req.params.id;
-
-	// Create array of all project ids
-	const allIds = projects.map( project => project.id);
-
-	// Get index of id in allIds, otherwise return -1
-	const index = allIds.indexOf(parseInt(id));
-
-	// If index equals -1, project id does not exist
-	if(index === -1) {
-		// Redirect user to home page
-		res.redirect('/');
-	}
-	// When index does not equal -1, project id does exist
-	else {
-		// Use id as index to get specific project data and assign to variable
-		const project = projects[index];
-
-		// Render project.pug template passing 'project' object as data
-		res.render('project', project);
-	}
+	Book.findByPk(req.params.id)
+		.then(function(book) {
+			if(book) {
+				res.render('update-book', { book: book, title: book.title });
+			} else {
+				res.render('error');
+			}
+		})
+		.catch(function(err) {
+			res.render('error');
+		});
 });
-``` -->
+```
 
 ## Acknowledgements
 This project was built as part of the [Full Stack JavaScript Techdegree](https://join.teamtreehouse.com/techdegree/) offered by [Treehouse](https://teamtreehouse.com) :raised_hands:
