@@ -1,10 +1,11 @@
+/* eslint-disable no-console */
 const express = require('express');
 const router = express.Router();
 
 var Book = require('../models').Book;
 
 
-/* GET articles listing. */
+/* GET articles listing */
 router.get('/', (req, res) => {
 	Book.findAll({ order: [['title']] })
 		.then(function(books){
@@ -16,14 +17,13 @@ router.get('/', (req, res) => {
 });
 
 
-
-/* Create a new book form. */
+/* Create a new book form */
 router.get('/new', (req, res) => {
 	res.render('new-book', {book: Book.build(), title: 'New Book'});
 });
 
 
-/* POST create book. */
+/* POST create book */
 router.post('/new', (req, res) => {
 	Book.create(req.body)
 		.then(function() {
@@ -42,12 +42,12 @@ router.post('/new', (req, res) => {
 			}
 		})
 		.catch(function(err) {
-			res.sendStatus(500);
+			res.sendStatus(err.status);
 		});
 });
 
 
-/* GET individual book. */
+/* GET individual book */
 router.get('/:id', (req, res) => {
 	Book.findByPk(req.params.id)
 		.then(function(book) {
@@ -63,7 +63,7 @@ router.get('/:id', (req, res) => {
 });
 
 
-/* POST update book. */
+/* POST update book */
 router.post('/:id', (req, res) => {
 	Book.findByPk(req.params.id)
 		.then(function(book) {
@@ -91,13 +91,13 @@ router.post('/:id', (req, res) => {
 			}
 		})
 		.catch(function(err) {
-			res.render("error");
+			res.render('error');
+			console.error(`Error: ${err.status} - ${err.message}`);
 		});
 });
 
 
-
-/* POST delete individual book. */
+/* POST delete individual book */
 router.post('/:id/delete', (req, res) => {
 	Book.findByPk(req.params.id)
 		.then(function(book) {
@@ -114,14 +114,6 @@ router.post('/:id/delete', (req, res) => {
 			res.sendStatus(500);
 		});
 });
-
-
-
-
-
-
-
-
 
 
 module.exports = router;

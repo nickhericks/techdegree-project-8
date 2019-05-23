@@ -1,5 +1,6 @@
 'use strict';
 
+// Table representation that maps database columns to a JS object
 module.exports = (sequelize, DataTypes) => {
 	const Book = sequelize.define('Book', {
 		title: {

@@ -32,8 +32,8 @@ app.use('/books', booksRoutes);
 
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
-	var err = new Error('Not Found');
+app.use((req, res, next) => {
+	const err = new Error('Not found');
 	err.status = 404;
 	next(err);
 });
@@ -42,9 +42,10 @@ app.use(function(req, res, next) {
 app.use((err, req, res, next) => {
 	res.locals.error = err;
 	res.status(err.status);
-	console.error(`Error: ${err.status} - ${err.message}`);
-	if(err.status === 404)
-	{
+	if(err.status === 404) {
+		// console.error(`Error: ${err.status} - ${err.message}`);
+	}
+	if(err.status === 404) {
 		res.render('page-not-found');
 	} else {
 		res.render('error');
