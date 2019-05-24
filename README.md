@@ -29,6 +29,7 @@ I used Sequelize to access the data in the library.db SQLite database file. Expr
 - Node.js
 - Express.js
 - Pug template engine
+- npm
 
 ## Code example
 Using the Book object to access the Sequelize book.js model, along with the Sequelize `.findByPk()` method to retrieve the book data we're looking for.
