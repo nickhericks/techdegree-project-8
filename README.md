@@ -13,7 +13,7 @@ A web application that tracks library books, built using the SQL ORM Sequelize.
 3. Run 'npm install' (or view the required dependencies listed in the package.json file and install each manually).
 3. Run 'npm start' to view the project in your browser at:  localhost:3000
 
-<!-- TODO: Set up live version hosting withusing Heroku -->
+<!-- TODO: Set up live version hosting with Heroku -->
 
 <!-- :mag: Live version available at [nickhericks.github.io/techdegree-project-6/](https://nickhericks.github.io/techdegree-project-6/) -->
 
