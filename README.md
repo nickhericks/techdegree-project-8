@@ -11,7 +11,7 @@ A web application that tracks library books, built using the SQL ORM Sequelize.
 1. Download this repo.
 2. Navigate to the project directory in the command line/terminal.
 3. Run 'npm install' (or view the required dependencies listed in the package.json file and install each manually).
-3. Run 'npm start' to view the project in your browser at:  localhost:3000
+3. Run 'npm start' to view the project in your browser at: localhost:3000
 
 <!-- TODO: Set up live version using Heroku -->
 
